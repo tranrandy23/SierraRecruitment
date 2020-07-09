@@ -1,0 +1,131 @@
+<!--<p>registeration works!</p>-->
+<<<<<<< Updated upstream
+<p>useremp works!</p>
+<div class="container">
+    <h2>User Registeration</h2>
+    <form  #Registerform="ngForm" (ngSubmit)="registerUser()" class="form-horizontal">
+      <small class= "text-danger">{{msg}}</small>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Email:</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control"  placeholder="Enter email" name="email" [(ngModel)] = "user.emailId" 
+          required pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" #email="ngModel"
+          [class.is-invalid] = "email.invalid && email.touched"
+          >
+      <!-- <small class= "text-danger" [class.d-none]= "email.valid || email.untouched">Email Id is required field </small>-->
+    <div *ngIf="email.errors && (email.invalid && email.touched)">
+      <small class="text-danger" *ngIf= "email.errors.required">Email Id is required field</small>
+
+      <small class="text-danger" *ngIf= "email.errors.pattern">Enter the valid email Id</small>
+    </div>  
+    
+    </div>
+      </div>
+       <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">UserName:</label>
+        <div class="col-sm-10">          
+          <input type="password" class="form-control"  placeholder="Enter UserName"  name="username" [(ngModel)] = "user.userName">
+          
+      
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Password:</label>
+        <div class="col-sm-10">          
+          <input type="password" class="form-control"  placeholder="Please enter password"  name="password" 
+          [(ngModel)] = "user.password" required #password="ngModel"
+          [class.is-invalid] = "password.invalid && password.touched"
+          >
+          <small class= "text-danger" [class.d-none]= "password.valid || password.untouched">Password is required field </small>
+        </div>
+      </div>
+    
+       <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Confirm Password:</label>
+        <div class="col-sm-10">          
+          <input type="password" class="form-control"  placeholder="Please re-enter Confirm password"  name="cpassword" #cpassword = "ngModel" (ngModel)="user.password" required 
+           [class.is-invalid] = "cpassword.invalid && cpassword.touched">
+          <small class= "text-danger" [class.d-none]= "(cpassword.value == password.value) || cpassword.untouched">Password & confirm password must be same</small>
+        </div>
+      </div>
+      <div class="form-group">        
+        <div class="col-sm-offset-2 col-sm-10">
+          <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info">Register</button>
+        </div>
+      </div>
+    </form>
+    <small class="float-right" [routerLink] = "['/useremp']">Existing user ? Login here</small>
+  </div>
+=======
+<p></p>
+<div class="container">
+  
+  <div class="row">
+    <div class="col-sm">
+      <div class="container" style="background-color: rgb(248, 249, 250)">
+        <h2>User Registeration</h2>
+        <form  #Registerform="ngForm" (ngSubmit)="registerUser()" class="form-vertical">
+          <small class= "text-danger">{{msg}}</small>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Email:</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control"  placeholder="Enter email" name="email" [(ngModel)] = "user.emailId" 
+              required pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" #email="ngModel"
+              [class.is-invalid] = "email.invalid && email.touched"
+              >
+          <!-- <small class= "text-danger" [class.d-none]= "email.valid || email.untouched">Email Id is required field </small>-->
+        <div *ngIf="email.errors && (email.invalid && email.touched)">
+          <small class="text-danger" *ngIf= "email.errors.required">Email Id is required field</small>
+    
+          <small class="text-danger" *ngIf= "email.errors.pattern">Enter the valid email Id</small>
+        </div>  
+        
+        </div>
+          </div>
+           <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">UserName:</label>
+            <div class="col-sm-10">          
+              <input type="password" class="form-control"  placeholder="Enter UserName"  name="username" [(ngModel)] = "user.userName">
+              
+          
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Password:</label>
+            <div class="col-sm-10">          
+              <input type="password" class="form-control"  placeholder="Please enter password"  name="password" 
+              [(ngModel)] = "user.password" required #password="ngModel"
+              [class.is-invalid] = "password.invalid && password.touched"
+              >
+              <small class= "text-danger" [class.d-none]= "password.valid || password.untouched">Password is required field </small>
+            </div>
+          </div>
+        
+           <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Confirm Password:</label>
+            <div class="col-sm-10">          
+              <input type="password" class="form-control"  placeholder="Please re-enter Confirm password"  name="cpassword" #cpassword = "ngModel" (ngModel)="user.password" required 
+               [class.is-invalid] = "cpassword.invalid && cpassword.touched">
+              <small class= "text-danger" [class.d-none]= "(cpassword.value == password.value) || cpassword.untouched">Password & confirm password must be same</small>
+            </div>
+          </div>
+          <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+              <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info">Register</button>
+            </div>
+          </div>
+        </form>
+        <small class="float-right" [routerLink] = "['/useremp']">Existing user ? Login here</small>
+      </div>
+    
+    </div>
+    
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+  </div>
+</div>
+>>>>>>> Stashed changes
