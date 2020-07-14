@@ -2,12 +2,21 @@
 <span layout="row" class="font-weight-bolder"><hr flex/><p class="text-center text-info">Welcome to Rigelsky</p><hr flex/></span>
 <span layout="row"><hr flex/><p class="text-center text-info">Registration Form</p><hr flex/></span>
 <div class="container">
+<<<<<<< Updated upstream
   
   <div class="row">
     
 <div class="col-sm">
 
   
+=======
+
+  <div class="row">
+
+<div class="col-sm">
+
+
+>>>>>>> Stashed changes
   <div class="card" style="width: 18rem;">
     <img src="https://rigelsky.com/images/trainingimg.png" class="rounded mx-auto d-block" alt="Responsive image"  height="200" width="800" class="card-img-top" alt="...">
     <div class="card-body">
@@ -20,7 +29,11 @@
       <li class="list-group-item">Admissions</li>
       <li class="list-group-item">Our Alumni</li>
     </ul>
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
     <div class="card-body">
       <a href="/training" class="card-link">Training</a>
       <a href="#" class="card-link">Job Placement Services</a>
@@ -37,47 +50,82 @@
           <div class="form-group">
             <label class="control-label col-sm-2" for="email">Email:</label>
             <div class="col-sm-10">
+<<<<<<< Updated upstream
               <input type="email" class="form-control"  placeholder="Enter email" name="email" [(ngModel)] = "user.emailId" 
+=======
+              <input type="email" class="form-control"  placeholder="Enter email" name="email" [(ngModel)] = "user.emailId"
+>>>>>>> Stashed changes
               required pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" #email="ngModel"
               [class.is-invalid] = "email.invalid && email.touched"
               >
           <!-- <small class= "text-danger" [class.d-none]= "email.valid || email.untouched">Email Id is required field </small>-->
         <div *ngIf="email.errors && (email.invalid && email.touched)">
           <small class="text-danger" *ngIf= "email.errors.required">Email Id is required field</small>
+<<<<<<< Updated upstream
     
           <small class="text-danger" *ngIf= "email.errors.pattern">Enter the valid email Id</small>
         </div>  
         
+=======
+
+          <small class="text-danger" *ngIf= "email.errors.pattern">Enter the valid email Id</small>
+        </div>
+
+>>>>>>> Stashed changes
         </div>
           </div>
            <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">UserName:</label>
+<<<<<<< Updated upstream
             <div class="col-sm-10">          
               <input type="password" class="form-control"  placeholder="Enter UserName"  name="username" [(ngModel)] = "user.userName">
               
           
+=======
+            <div class="col-sm-10">
+              <input type="password" class="form-control"  placeholder="Enter UserName"  name="username" [(ngModel)] = "user.userName">
+
+
+>>>>>>> Stashed changes
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Password:</label>
+<<<<<<< Updated upstream
             <div class="col-sm-10">          
               <input type="password" class="form-control"  placeholder="Please enter password"  name="password" 
+=======
+            <div class="col-sm-10">
+              <input type="password" class="form-control"  placeholder="Please enter password"  name="password"
+>>>>>>> Stashed changes
               [(ngModel)] = "user.password" required #password="ngModel"
               [class.is-invalid] = "password.invalid && password.touched"
               >
               <small class= "text-danger" [class.d-none]= "password.valid || password.untouched">Password is required field </small>
             </div>
           </div>
+<<<<<<< Updated upstream
         
            <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">ConfirmPassword:</label>
             <div class="col-sm-10">          
               <input type="password" class="form-control"  placeholder="Please re-enter Confirm password"  name="cpassword" #cpassword = "ngModel" (ngModel)="user.password" required 
+=======
+
+           <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">ConfirmPassword:</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control"  placeholder="Please re-enter Confirm password"  name="cpassword" #cpassword = "ngModel" (ngModel)="user.password" required
+>>>>>>> Stashed changes
                [class.is-invalid] = "cpassword.invalid && cpassword.touched">
               <small class= "text-danger" [class.d-none]= "(cpassword.value == password.value) || cpassword.untouched">Password & confirm password must be same</small>
             </div>
           </div>
+<<<<<<< Updated upstream
           <div class="form-group">        
+=======
+          <div class="form-group">
+>>>>>>> Stashed changes
             <div class="col-sm-offset-2 col-sm-10">
               <button [disabled]="Registerform.form.invalid" type="submit" class="btn btn-info">Register</button>
             </div>
@@ -85,6 +133,7 @@
         </form>
         <small class="float-right" [routerLink] = "['/useremp']">Existing user ? Login here</small>
       </div>
+<<<<<<< Updated upstream
     
     </div>
     
@@ -92,5 +141,14 @@
     
       <div class="col-sm">
   
+=======
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-sm">
+
+>>>>>>> Stashed changes
   </div>
 </div>

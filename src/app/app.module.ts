@@ -11,7 +11,11 @@ import { RegisterationComponent } from './useremp/registeration/registeration.co
 import { RegisterSuccessComponent } from './useremp/register-success/register-success.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+<<<<<<< Updated upstream
 import { ContactListComponent } from './contact-list/contact-list.component';
+=======
+//import { ContactListComponent } from './contact-list/contact-list.component';
+>>>>>>> Stashed changes
 import { TrainingComponent } from './training/training.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -25,9 +29,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RegisterSuccessComponent,
     HeaderComponent,
     FooterComponent,
+<<<<<<< Updated upstream
     ContactListComponent,
     TrainingComponent,
     
+=======
+   // ContactListComponent,
+    TrainingComponent,
+
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,
@@ -35,8 +45,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     AppRoutingModule,
     BsDropdownModule.forRoot(),
+<<<<<<< Updated upstream
    
     
+=======
+
+
+>>>>>>> Stashed changes
   ],
   providers: [],
   bootstrap: [AppComponent]
