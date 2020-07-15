@@ -16,9 +16,4 @@ export class RegService {
   public loginUserFromRemote(user : User):Observable<any>{
    return this._http.post<any>("http://localhost:8084/login",user)
   }
-<<<<<<< Updated upstream
-  
-=======
-
->>>>>>> Stashed changes
 }
