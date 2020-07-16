@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RegService } from '../reg.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-module',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewModuleComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service : RegService, private router : Router) { }
 
   ngOnInit(): void {
+  }
+
+  addCandidate(){
+    this.router.navigate(['/addCandidate']);
+  }
+
+  viewCandidate()
+  {
+    this.router.navigate(['/viewCandidate']);
   }
 
 }
