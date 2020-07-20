@@ -3,15 +3,18 @@
 <span layout="row"><hr flex/><p class="text-center text-info">Rigelsky now specializes in matching professionals with the right temporary or full-time job opportunities with a variety of employers in all industries. </p><hr flex/></span>
 <span layout="row" class="font-weight-bolder"><hr flex/><p class="text-center text-danger">Add candidate information!</p><hr flex/></span>
 
-
-<div class="container" style="background-color: rgb(248, 249, 250)">
+<div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-7">
+<div class="container" style="background-color: rgb(241, 242, 248)">
   <form class="form-horizontal" (ngSubmit)="addCandidate()"   #candidateform="ngForm">
     <div class="form-group">
       <div class="col-sm-2"></div>
       <h4 class="col-sm-10">Enter your details here</h4>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="firstName">First Name:</label>
+      <label class="control-label col-sm-2" for="firstName">FirstName:</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" name="firstName" placeholder="Enter the first name" [(ngModel)]="candidate.firstName" required #firstName="ngModel">
         <div *ngIf="firstName.invalid && firstName.touched" class="alert alert-danger">
@@ -21,7 +24,7 @@
     </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="lastName">Last Name:</label>
+      <label class="control-label col-sm-2" for="lastName">LastName:</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" name="lastName" placeholder="Enter the last name" [(ngModel)]="candidate.lastName" required #lastName="ngModel">
         <div *ngIf="lastName.invalid && lastName.touched" class="alert alert-danger">
@@ -31,7 +34,7 @@
     </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="dateOfBirth">Date of Birth:</label> 
+      <label class="control-label col-sm-2" for="dateOfBirth">DateofBirth:</label> 
       <div class="col-sm-10">
         <input type="date" class="form-control" name="dateOfBirth" placeholder="Enter your date of birth" [(ngModel)]="candidate.dateOfBirth" required #dateOfBirth="ngModel">
         <div *ngIf="dateOfBirth.invalid && dateOfBirth.touched" class="alert alert-danger">
@@ -81,12 +84,10 @@
       <button type="submit" class="btn btn-info">Add</button>
       
     </div>
-    <div class="col-md-2 form-group">
-      
-      <button type="submit" (click)="deleteCandidate()" class="btn btn-danger">Delete</button>
-    </div>
+    
   </div>
   </form>
 
 </div>
 
+</div></div></div></div>

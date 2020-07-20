@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Candidate } from 'projects/mixtest/src/app/models/candidate';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Candidate } from 'projects/mix/src/app/models/candidate';
 import { CandidateDataService } from '../services/data/candidate-data.service';
 import {NgForm} from '@angular/forms';
-import {Router} from '@angular/router'
+import {Router, ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'app-candidate-form',
@@ -12,21 +12,23 @@ import {Router} from '@angular/router'
 export class CandidateFormComponent implements OnInit {
 
   errorMessage: string = "";
-  candidate: Candidate = new Candidate();
+  candidate: Candidate = new Candidate( );
   msg = '';
-  
-  constructor(private _service: CandidateDataService, private _router : Router) {
+  id : number;
+  @ViewChild('candidateform', { static: false }) userForm: NgForm;   
+  constructor(private _service: CandidateDataService, private _router : Router,private route:ActivatedRoute) {
     
    }
-
+  
   ngOnInit(){
-
+    
   }
 
-  addCandidate() {
+  addCandidate( ) {
+    
     this._service.addUserFromRemote(this.candidate).subscribe(
       data => {console.log ("response recieved");
-      this._router.navigateByUrl('addsuccess')
+      this._router.navigate(['/addcandidate'])
     },
       error => {console.log ("exception occured");
       this.msg  = 'error'
@@ -35,8 +37,8 @@ export class CandidateFormComponent implements OnInit {
     
    
 
-deleteCandidate() {
-  this._service.deleteUserFromRemote(this.candidate).subscribe(
+deleteCandidate(id : number){
+  this._service.deleteUserFromRemote(id).subscribe(
     data => {console.log ("response recieved");
     this._router.navigateByUrl('deletesuccess')
   },
@@ -47,7 +49,13 @@ deleteCandidate() {
 )}
 
 listCandidate(){
+ 
+this._service.getlistUserFromRemote(this.id).subscribe(
+  data => {console.log ("response recieved");
   this._router.navigate(['/addcandidate'])
-
-}}
-
+},
+  error => {console.log ("exception occured");
+  console.log(this.msg = 'Email already exist!');
+}
+)}
+}

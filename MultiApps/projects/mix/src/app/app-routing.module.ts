@@ -7,8 +7,8 @@ import { RegisterSuccessComponent } from './useremp/register-success/register-su
 import { TrainingComponent } from './training/training.component';
 import { ViewModuleComponent } from './view-module/view-module.component';
 import { CandidateFormComponent } from './candidate-form/candidate-form.component';
-import { AddsuccessComponent } from './candidate-form/addsuccess/addsuccess.component';
-
+import {AddcandidateComponent} from './candidate-form/addcandidate/addcandidate.component';
+import { CandidateListComponent } from './candidate-list/candidate-list.component';
 
 
 
@@ -21,8 +21,8 @@ const routes: Routes = [
   {path:'registerSuccess',component:RegisterSuccessComponent},
   {path:'training',component:TrainingComponent},
   {path:'candidate-form',component:CandidateFormComponent},
-  {path:'addsuccess',component:AddsuccessComponent},
- 
+  {path:'candidate-list/:id',component:CandidateListComponent},
+  {path:'addcandidate',component:AddcandidateComponent},
 
   ];
 

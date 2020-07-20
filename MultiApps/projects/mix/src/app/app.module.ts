@@ -18,6 +18,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CandidateFormComponent } from './candidate-form/candidate-form.component';
 import { AddsuccessComponent } from './candidate-form/addsuccess/addsuccess.component';
 import { AddcandidateComponent } from './candidate-form/addcandidate/addcandidate.component';
+import { CandidateListComponent } from './candidate-list/candidate-list.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AddcandidateComponent } from './candidate-form/addcandidate/addcandidat
     TrainingComponent,
     CandidateFormComponent,
     AddsuccessComponent,
-    AddcandidateComponent
+    AddcandidateComponent,
+    CandidateListComponent
     
 
   ],

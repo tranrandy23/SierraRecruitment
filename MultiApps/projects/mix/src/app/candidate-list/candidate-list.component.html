@@ -13,24 +13,20 @@
         <th>phoneNumber</th>
         <th>qualification</th>
         <th> address</th>
-        <th >Action</th>
+        <th>Action</th>
+
+
       </tr>
     </thead>
       <tbody>
-      <tr  *ngFor="let candidate of candidates">
+      <tr *ngFor="let candidate of candidates | async">
         <td ></td>
         <td>{{candidate.firstName}}</td>
         <td>{{candidate.lastName}}</td>
         <td>{{candidate.email}}</td>
-        <td>{{candidate.dateOfBirth}}</td>
-        <td>{{candidate.phoneNumber}}</td>
-        <td>{{candidate.qualification}}</td>
-        <td>{{candidate.address}}</td>
-        <td><button  class="btn btn-danger"> Delete</button></td>
+        <td><button  class="btn btn-danger" > Delete</button></td>
         <td><button  class="btn btn-info" > Update</button></td>
-        
-        
-
+        <td><button  class="btn btn-info" > Details</button></td>
       </tr>
       </tbody>
     </table>
