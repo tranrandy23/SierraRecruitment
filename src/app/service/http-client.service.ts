@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 
 export class User{
   public id: number;
-  public firstname: string;
-  public lastname: string;
+  public firstName: string;
+  public lastName: string;
 
-  constructor(id: number, firstname: string, lastname: string){
-    this.id=id;
-    this.firstname=firstname;
-    this.lastname=lastname;
+  constructor(id: number, firstName: string, lastName: string){
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
   }
 }
 

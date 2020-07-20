@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="col-md-12">
+        <h1 style="text-align: center;">Share your feedback</h1>
+        <hr>
+    </div>
+</div>
+<div>
+  <div class="container">
+      <div class="row">
+          <div class="col-25">
+              <label>ID: </label>
+          </div>
+          <div class="col-75">
+              {{u.id}}
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-25">
+            <label>First Name: </label>
+          </div>
+          <div class="col-75">
+            {{u.firstName}}
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-25">
+            <label for="lname">Last Name: </label>
+          </div>
+          <div class="col-75">
+            {{u.lastName}}
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-25">
+            <label>Week Selection: </label>
+          </div>
+          <div class="col-75">
+            <select id="weeks" name="weeks">
+              <option value="week1">First Week</option>
+              <option value="week2">Second Week</option>
+              <option value="week3">Third Week</option>
+              <option value="week4">Fourth Week</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="subject">Feedback: </label>
+          </div>
+          <div class="col-75">
+            <textarea id="feedback" name="Feedback" placeholder="Write something.." style="height:150px"></textarea>
+          </div>
+        </div>
+        <div class="botton">
+          <input type="submit" value="Submit">
+        </div>
+        <br>  
+  </div>
+</div>
+
+<!-- <div *ngFor="let user of users">
+  <label>ID: </label>
+  <div>{{u.id}}</div>
+  <label>First Name: </label>
+  <div>{{u.firstName}}</div>
+  <label>Last Name: </label>
+  <div>{{u.lastName}}</div>
+</div> -->
+
+<div class="footer">
+    <span>All Rights Reserved 2020 @SierraTeam</span>
+</div>

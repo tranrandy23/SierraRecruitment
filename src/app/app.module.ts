@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,8 +9,7 @@ import { ProvideFeedbackComponent } from './provide-feedback/provide-feedback.co
 import { ViewPerformanceComponent } from './view-performance/view-performance.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TrainingModuleComponent } from './training-module/training-module.component';
-
-
+import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
 
 @NgModule({
   declarations: [
@@ -17,9 +17,8 @@ import { TrainingModuleComponent } from './training-module/training-module.compo
     HeaderComponent,
     ProvideFeedbackComponent,
     ViewPerformanceComponent,
-    TrainingModuleComponent
-    
-    
+    TrainingModuleComponent,
+    AddFeedbackComponent
   ],
   imports: [
     BrowserModule,

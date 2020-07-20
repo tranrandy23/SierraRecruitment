@@ -1,7 +1,7 @@
 
 import { HttpClientService, User } from './../service/http-client.service';
-
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-provide-feedback',
@@ -10,9 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProvideFeedbackComponent implements OnInit {
 
-  users: User[]= [];
+  users: User[] = [];
 
-  constructor(private httpService: HttpClientService) { }
+  constructor(private httpService: HttpClientService, private router: Router) { }
 
   ngOnInit() {
     this.httpService.getUsers().subscribe(
@@ -20,9 +20,12 @@ export class ProvideFeedbackComponent implements OnInit {
     )
   }
 
-  onProvideFeedbackClick(user){
-    console.log("Provide Feedback button clicked.");
-    alert("Provide Feedback Button Clicked..!  For "+user.id+" "+user.firstname);
+  onProvideFeedbackClick(user: User) {
+    this.router.navigate(['/add-feedback', JSON.stringify(user)]); 
   }
 
+  // onProvideFeedbackClick(user){
+  //   console.log("Provide Feedback button clicked.");
+  //   alert("Provide Feedback Button Clicked..!  For "+user.id+" "+user.firstname);
+  // }
 }

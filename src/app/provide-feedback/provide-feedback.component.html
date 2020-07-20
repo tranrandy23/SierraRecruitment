@@ -18,10 +18,11 @@
         <tbody>
             <tr *ngFor="let user of users" id="tablerow">
                 <td> {{ user.id }} </td>
-                <td> {{ user.firstname }} </td>
-                <td> {{ user.lastname }} </td>
+                <td> {{ user.firstName }} </td>
+                <td> {{ user.lastName }} </td>
                 <td>Java</td>
-                <td><button type="button" class="btn btn-primary" (click)="onProvideFeedbackClick(user)">Provide Feedback</button></td>
+                <!-- <td><button type="button" class="btn btn-primary" (click)="onProvideFeedbackClick()">Provide Feedback</button></td> -->
+                <td><input type="button" class="btn btn-primary" (click)="onProvideFeedbackClick(user)" value="Provide Feedback"/></td>
             </tr>
         </tbody>
     </table>

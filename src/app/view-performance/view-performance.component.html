@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <h2 style="text-align: center;">Choose Student to See Performance</h2>
+        <h1 style="text-align: center;">Choose Student to See Performance</h1>
         <hr>
     </div>
 </div>
@@ -18,8 +18,8 @@
         <tbody>
             <tr *ngFor="let user of users" id="tablerow">
                 <td> {{ user.id }} </td>
-                <td> {{ user.firstname }} </td>
-                <td> {{ user.lastname }} </td>
+                <td> {{ user.firstName }} </td>
+                <td> {{ user.lastName }} </td>
                 <td>Java</td>
                 <td><button type="button" class="btn btn-success" (click)="onViewPerformanceClick(user)">View Performance</button></td>
             </tr>
