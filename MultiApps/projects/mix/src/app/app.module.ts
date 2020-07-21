@@ -16,7 +16,6 @@ import { TrainingComponent } from './training/training.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CandidateFormComponent } from './candidate-form/candidate-form.component';
-import { AddsuccessComponent } from './candidate-form/addsuccess/addsuccess.component';
 import { AddcandidateComponent } from './candidate-form/addcandidate/addcandidate.component';
 import { CandidateListComponent } from './candidate-list/candidate-list.component';
 
@@ -29,10 +28,8 @@ import { CandidateListComponent } from './candidate-list/candidate-list.componen
     RegisterSuccessComponent,
     HeaderComponent,
     FooterComponent,
-   // ContactListComponent,
     TrainingComponent,
     CandidateFormComponent,
-    AddsuccessComponent,
     AddcandidateComponent,
     CandidateListComponent
     

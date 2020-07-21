@@ -16,6 +16,7 @@ export class AddcandidateComponent implements OnInit {
   candidate$: any;
   route: any;
 candidates : Candidate[];
+
   constructor(private _service : CandidateDataService , private _router : Router,private router :
     ActivatedRoute) { }
 
@@ -25,24 +26,25 @@ candidates : Candidate[];
     this._service.getEmployees().subscribe(
       response =>{this.candidates = response;}
      );
-
-    this._service.getlistUserFromRemote(this.id).subscribe(
-      data => {console.log ("response recieved");
-      this.candidate = data;
-    },
-      error => {console.log ("exception occured");
-      console.log(this.msg = 'Email already exist!');
+        
   }
-    )}
+    
+deleteEmployee(candidate: Candidate): void {
+  this._service.deleteEmployee(candidate)
+    .subscribe( data => {
+      this.candidates = this.candidates.filter(u => u !== candidate);
+    })
+};
 
-listCandidate(){
- 
-  this._service.getlistUserFromRemote(this.id).subscribe(
+
+details( ) {
+    
+  this._service.getEmployees().subscribe(
     data => {console.log ("response recieved");
-    this._router.navigate(['/addcandidate'])
+    this._router.navigate(['/candidate-list'])
   },
     error => {console.log ("exception occured");
-    console.log(this.msg = 'Email already exist!');
-  }
+    this.msg  = 'error'
+}
   )}
   }

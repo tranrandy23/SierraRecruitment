@@ -1,4 +1,5 @@
 export class Candidate {
+   
     firstName: string;
     lastName: string;
     dateOfBirth: string;

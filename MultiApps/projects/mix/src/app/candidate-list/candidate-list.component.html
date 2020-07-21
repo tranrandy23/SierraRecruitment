@@ -1,33 +1,37 @@
 
-<div class="col-md-6" class="text-center text-info" >
-    <h2> User Details</h2>
-    
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th class="hidden">Id</th>
-        <th>FirstName</th>
-        <th>LastName</th>
-        <th>Email</th>
-        <th>dateOfBirth</th>
-        <th>phoneNumber</th>
-        <th>qualification</th>
-        <th> address</th>
-        <th>Action</th>
+<div class="col-md-6" class="text-center text-primary" >
+  <h2> User Details</h2>
+  
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Email</th>
+      <th>dateOfBirth</th>
+      <th>phoneNumber</th>
+      <th>qualification</th>
+      <th> address</th>
+      <th >Action</th>
+    </tr>
+  </thead>
+    <tbody>
+    <tr  *ngFor="let candidate of candidates">
+      <td ></td>
+      <td>{{candidate.firstName}}</td>
+      <td>{{candidate.lastName}}</td>
+      <td>{{candidate.email}}</td>
+      <td>{{candidate.dateOfBirth}}</td>
+      <td>{{candidate.phoneNumber}}</td>
+      <td>{{candidate.qualification}}</td>
+      <td>{{candidate.address}}</td>
+      <td><button  class="btn btn-danger" (click)="deleteEmployee(candidate)"> Delete</button></td>
+      <td><button  class="btn btn-info"  (click)="list()"> Back to list</button></td>
+      
+      
 
-
-      </tr>
-    </thead>
-      <tbody>
-      <tr *ngFor="let candidate of candidates | async">
-        <td ></td>
-        <td>{{candidate.firstName}}</td>
-        <td>{{candidate.lastName}}</td>
-        <td>{{candidate.email}}</td>
-        <td><button  class="btn btn-danger" > Delete</button></td>
-        <td><button  class="btn btn-info" > Update</button></td>
-        <td><button  class="btn btn-info" > Details</button></td>
-      </tr>
-      </tbody>
-    </table>
-    </div>
+    </tr>
+    </tbody>
+  </table>
+  </div>

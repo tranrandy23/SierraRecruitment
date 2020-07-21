@@ -13,50 +13,30 @@ import { Observable } from 'rxjs';
 export class CandidateListComponent implements OnInit {
   candidate = new Candidate();
   msg = '';
-  id : number
-  candidates: Observable<Candidate[]>;
+  id : number;
+  candidate$: any;
+  route: any;
+candidates : Candidate[];
 
-  constructor( private _service: CandidateDataService,private _router : Router,private router :
+  constructor(private _service : CandidateDataService , private _router : Router,private router :
     ActivatedRoute) { }
 
-  ngOnInit() {
+  ngOnInit(){
+    this.id = this.router.snapshot.params['id'];
     
-    this.reloadData();
-    
-   
-
-
-  }  
-  
-  reloadData() {
-    this.candidates = this._service.listUserFromRemote();
+    this._service.getEmployees().subscribe(
+      response =>{this.candidates = response;}
+     );
+        
   }
-  
-   
-   
+    
+deleteEmployee(candidate: Candidate): void {
+  this._service.deleteEmployee(candidate)
+    .subscribe( data => {
+      this.candidates = this.candidates.filter(u => u !== candidate);
+    })
+};
 
-deleteCandidate(id : number){
-  this._service.deleteUserFromRemote(id).subscribe(
-    data => {console.log ("response recieved");
-    this._router.navigateByUrl('deletesuccess')
-  },
-    error => {console.log ("exception occured");
-    this.msg  = 'error'
-
-}
-)}
-
-listCandidate(){
- 
-this._service.listUserFromRemote().subscribe(
-  data => {console.log ("response recieved");
-  this._router.navigate(['/candidate-form'])
-},
-  error => {console.log ("exception occured");
-  console.log(this.msg = 'Email already exist!');
-}
-)}
-employeeDetails(id: number){
-  this._router.navigate(['candidate-list', id]);
-}
-}
+list(){
+  this._router.navigate(['/addcandidate']);
+  }}

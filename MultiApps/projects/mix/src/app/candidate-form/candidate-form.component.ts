@@ -35,27 +35,6 @@ export class CandidateFormComponent implements OnInit {
   }
     )}
     
-   
+} 
 
-deleteCandidate(id : number){
-  this._service.deleteUserFromRemote(id).subscribe(
-    data => {console.log ("response recieved");
-    this._router.navigateByUrl('deletesuccess')
-  },
-    error => {console.log ("exception occured");
-    this.msg  = 'error'
 
-}
-)}
-
-listCandidate(){
- 
-this._service.getlistUserFromRemote(this.id).subscribe(
-  data => {console.log ("response recieved");
-  this._router.navigate(['/addcandidate'])
-},
-  error => {console.log ("exception occured");
-  console.log(this.msg = 'Email already exist!');
-}
-)}
-}

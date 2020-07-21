@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:'registerSuccess',component:RegisterSuccessComponent},
   {path:'training',component:TrainingComponent},
   {path:'candidate-form',component:CandidateFormComponent},
-  {path:'candidate-list/:id',component:CandidateListComponent},
+  {path:'candidate-list',component:CandidateListComponent},
   {path:'addcandidate',component:AddcandidateComponent},
 
   ];
