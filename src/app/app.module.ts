@@ -15,6 +15,9 @@ import { FooterComponent } from './footer/footer.component';
 import { TrainingComponent } from './training/training.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CandidateFormComponent } from './candidate-form/candidate-form.component';
+import { AddcandidateComponent } from './candidate-form/addcandidate/addcandidate.component';
+import { CandidateListComponent } from './candidate-list/candidate-list.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +28,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RegisterSuccessComponent,
     HeaderComponent,
     FooterComponent,
-   // ContactListComponent,
     TrainingComponent,
+    CandidateFormComponent,
+    AddcandidateComponent,
+    CandidateListComponent
+    
 
   ],
   imports: [

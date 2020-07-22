@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { RegService } from '../reg.service';
 import { Router } from '@angular/router';
+import {NgForm} from '@angular/forms';
+import { CandidateDataService } from '../services/data/candidate-data.service';
+
+
 
 @Component({
   selector: 'app-view-module',
@@ -9,18 +12,18 @@ import { Router } from '@angular/router';
 })
 export class ViewModuleComponent implements OnInit {
 
-  constructor(private service : RegService, private router : Router) { }
+  constructor(private _service : CandidateDataService, private _router : Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   addCandidate(){
-    this.router.navigate(['/addCandidate']);
+    this._router.navigate(['/candidate-form']);
   }
 
   viewCandidate()
   {
-    this.router.navigate(['/viewCandidate']);
+    this._router.navigate(['/viewCandidate']);
   }
 
 }
