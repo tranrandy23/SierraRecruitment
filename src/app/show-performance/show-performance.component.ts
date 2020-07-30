@@ -3,18 +3,18 @@ import { ActivatedRoute } from '@angular/router';
 import { User } from '../service/http-client.service';
 
 @Component({
-  selector: 'app-add-feedback',
-  templateUrl: './add-feedback.component.html',
-  styleUrls: ['./add-feedback.component.css']
+  selector: 'app-show-performance',
+  templateUrl: './show-performance.component.html',
+  styleUrls: ['./show-performance.component.css']
 })
 
-export class AddFeedbackComponent implements OnInit {
+export class ShowPerformanceComponent implements OnInit {
 
   u: User;
 
-  constructor(private activatedRoute: ActivatedRoute ) {
+  constructor(private activatedRoute: ActivatedRoute ) { 
     this.u = JSON.parse(activatedRoute.snapshot.params["user"]);
-   }
+  }
 
   ngOnInit(): void {
   }

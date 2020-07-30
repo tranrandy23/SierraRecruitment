@@ -1,12 +1,2 @@
 <app-header (featureSelected)="onNav($event)"></app-header>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <app-training-module  *ngIf ="loadedFeature === 'app-training-module'"></app-training-module>
-      <app-provide-feedback *ngIf ="loadedFeature === 'provide-feedback'"></app-provide-feedback>
-      <app-view-performance *ngIf ="loadedFeature === 'view-performance'"></app-view-performance>
-    </div>
-  </div>
-</div>
-
 <router-outlet></router-outlet>

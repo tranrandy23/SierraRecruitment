@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpClientService, User } from './../service/http-client.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-view-performance',
@@ -8,9 +9,9 @@ import { HttpClientService, User } from './../service/http-client.service';
 })
 export class ViewPerformanceComponent implements OnInit {
 
-  users: User[]=[];
+  users: User[] = [];
 
-  constructor(private httpService: HttpClientService) { }
+  constructor(private httpService: HttpClientService, private router: Router) { }
 
   ngOnInit() {
     this.httpService.getUsers().subscribe(
@@ -18,9 +19,12 @@ export class ViewPerformanceComponent implements OnInit {
     )
   }
 
-  onViewPerformanceClick(user){
-    console.log("View Performance button clicked.");
-    alert("Request to view Performance....Of "+user.id+" "+user.firstname);
+  onViewPerformanceClick(user: User) {
+    this.router.navigate(['/show-performance', JSON.stringify(user)]);
   }
 
+  // onViewPerformanceClick(user){
+  //   console.log("View Performance button clicked.");
+  //   alert("Request to view Performance....Of "+user.id+" "+user.firstname);
+  // }
 }

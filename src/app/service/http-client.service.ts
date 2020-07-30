@@ -24,4 +24,6 @@ export class HttpClientService {
     console.log("Practice Service");
     return this.httpclient.get<User[]>('http://localhost:8081/userlist');
   }
+
 }
+

@@ -10,6 +10,7 @@ import { ViewPerformanceComponent } from './view-performance/view-performance.co
 import { HttpClientModule } from '@angular/common/http';
 import { TrainingModuleComponent } from './training-module/training-module.component';
 import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
+import { ShowPerformanceComponent } from './show-performance/show-performance.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AddFeedbackComponent } from './add-feedback/add-feedback.component';
     ProvideFeedbackComponent,
     ViewPerformanceComponent,
     TrainingModuleComponent,
-    AddFeedbackComponent
+    AddFeedbackComponent,
+    ShowPerformanceComponent
   ],
   imports: [
     BrowserModule,
