@@ -1,3 +1,4 @@
+
 export class Candidate {
    
     firstName: string;
@@ -7,6 +8,7 @@ export class Candidate {
     phoneNumber: string;
     qualification: string;
     address: string;
+    
     constructor()
     {
    

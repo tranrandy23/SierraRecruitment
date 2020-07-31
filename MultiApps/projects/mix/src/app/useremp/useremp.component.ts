@@ -20,7 +20,7 @@ export class UserempComponent implements OnInit {
   loginUser(){
     this._service.loginUserFromRemote(this.user).subscribe(
       data => {console.log ("response recieved");
-      this._router.navigate(['/loginSuccess'])
+      this._router.navigate(['/viewModule'])
     },
       error => {console.log ("exception occured");
     this.msg = 'Bad credentials, please enter valid emailId and password!'

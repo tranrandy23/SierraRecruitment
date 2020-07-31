@@ -3,8 +3,9 @@
   <h2> User Details</h2>
   
   <table class="table table-striped">
-    <thead>
-    <tr>
+    <thead >
+      <tr   >
+       
       <th class="hidden">Id</th>
       <th>FirstName</th>
       <th>LastName</th>
@@ -16,22 +17,29 @@
       <th >Action</th>
     </tr>
   </thead>
+  
     <tbody>
-    <tr  *ngFor="let candidate of candidates">
-      <td ></td>
-      <td>{{candidate.firstName}}</td>
+      
+      
+    <tr  >
+     
+      <th>{{id}}</th>
+      <td >{{candidate.firstName}}</td>
       <td>{{candidate.lastName}}</td>
       <td>{{candidate.email}}</td>
       <td>{{candidate.dateOfBirth}}</td>
       <td>{{candidate.phoneNumber}}</td>
       <td>{{candidate.qualification}}</td>
       <td>{{candidate.address}}</td>
-      <td><button  class="btn btn-danger" (click)="deleteEmployee(candidate)"> Delete</button></td>
+    
       <td><button  class="btn btn-info"  (click)="list()"> Back to list</button></td>
       
-      
-
+ 
+    
     </tr>
+ 
     </tbody>
+ 
   </table>
+ 
   </div>

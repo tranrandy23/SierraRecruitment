@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserempComponent } from './useremp/useremp.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginsuccessComponent } from './useremp/loginsuccess/loginsuccess.component';
 import { RegisterationComponent } from './useremp/registeration/registeration.component';
@@ -18,6 +18,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CandidateFormComponent } from './candidate-form/candidate-form.component';
 import { AddcandidateComponent } from './candidate-form/addcandidate/addcandidate.component';
 import { CandidateListComponent } from './candidate-list/candidate-list.component';
+import { CandidateUpdateComponent } from './candidate-list/candidate-update/candidate-update.component';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,10 @@ import { CandidateListComponent } from './candidate-list/candidate-list.componen
     TrainingComponent,
     CandidateFormComponent,
     AddcandidateComponent,
-    CandidateListComponent
+    CandidateListComponent,
+    CandidateUpdateComponent
+    
+   
     
 
   ],
@@ -40,6 +45,7 @@ import { CandidateListComponent } from './candidate-list/candidate-list.componen
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     BsDropdownModule.forRoot(),
 
 

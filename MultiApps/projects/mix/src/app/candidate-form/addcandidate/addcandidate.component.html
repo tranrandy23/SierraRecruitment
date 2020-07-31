@@ -5,13 +5,13 @@
     <table class="table table-striped">
       <thead>
       <tr>
-        
+        <th class="hidden">Id</th>
         <th>FirstName</th>
         <th>LastName</th>
        <th>Email</th>
-      <!--   <th>dateOfBirth</th>
+         <th>dateOfBirth</th>
        
-         <th> address</th>-->
+         <th> address</th>
          <th>phoneNumber</th>
         <th>qualification</th>
        
@@ -20,19 +20,19 @@
     </thead>
       <tbody>
       <tr  *ngFor="let candidate of candidates">
-        
+        <td></td>
         <td>{{candidate.firstName}}</td>
         <td>{{candidate.lastName}}</td>
        <td>{{candidate.email}}</td>
-       <!--  <td>{{candidate.dateOfBirth}}</td>
-         <td>{{candidate.address}}</td>-->
+        <td>{{candidate.dateOfBirth}}</td>
+         <td>{{candidate.address}}</td>
         <td>{{candidate.phoneNumber}}</td>
         <td>{{candidate.qualification}}</td>
         <td><button  class="btn btn-danger" (click)="deleteEmployee(candidate)"> Delete</button></td>
-        <td><button  class="btn btn-info" (click) = "details()" > Details</button></td>
-        <td><button  class="btn btn-info" > Update</button></td>
-        
-        
+        <td><button  class="btn btn-info" (click) = "details(candidate)" > Details</button></td>
+        <td><button  class="btn btn-info" (click) = "update(candidate)"> Update</button></td>
+       
+       
 
       </tr>
       </tbody>

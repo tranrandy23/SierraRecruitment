@@ -1,8 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Candidate } from 'projects/mix/src/app/models/candidate';
+
 import { CandidateDataService } from '../services/data/candidate-data.service';
 import {NgForm} from '@angular/forms';
 import {Router, ActivatedRoute} from '@angular/router'
+import { Candidate } from '../models/candidate';
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-candidate-form',
@@ -12,7 +15,7 @@ import {Router, ActivatedRoute} from '@angular/router'
 export class CandidateFormComponent implements OnInit {
 
   errorMessage: string = "";
-  candidate: Candidate = new Candidate( );
+  candidate = new Candidate();
   msg = '';
   id : number;
   @ViewChild('candidateform', { static: false }) userForm: NgForm;   

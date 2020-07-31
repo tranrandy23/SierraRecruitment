@@ -9,6 +9,7 @@ import { ViewModuleComponent } from './view-module/view-module.component';
 import { CandidateFormComponent } from './candidate-form/candidate-form.component';
 import {AddcandidateComponent} from './candidate-form/addcandidate/addcandidate.component';
 import { CandidateListComponent } from './candidate-list/candidate-list.component';
+import { CandidateUpdateComponent } from './candidate-list/candidate-update/candidate-update.component';
 
 
 
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:'candidate-form',component:CandidateFormComponent},
   {path:'candidate-list',component:CandidateListComponent},
   {path:'addcandidate',component:AddcandidateComponent},
-
+  {path:'candidate-update',component:CandidateUpdateComponent},
+ 
   ];
 
 @NgModule({

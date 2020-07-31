@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Candidate } from 'projects/mix/src/app/models/candidate';
+
 import {Router, ActivatedRoute} from '@angular/router';
 import { CandidateDataService } from '../../services/data/candidate-data.service';
-import {NgForm} from '@angular/forms';
+import {NgForm, FormControl, FormGroup} from '@angular/forms';
+import { Candidate } from '../../models/candidate';
 
 @Component({
   selector: 'app-addcandidate',
@@ -16,6 +17,7 @@ export class AddcandidateComponent implements OnInit {
   candidate$: any;
   route: any;
 candidates : Candidate[];
+  
 
   constructor(private _service : CandidateDataService , private _router : Router,private router :
     ActivatedRoute) { }
@@ -37,14 +39,25 @@ deleteEmployee(candidate: Candidate): void {
 };
 
 
-details( ) {
+details(candidate: Candidate) {
     
-  this._service.getEmployees().subscribe(
-    data => {console.log ("response recieved");
-    this._router.navigate(['/candidate-list'])
-  },
+  this._service.setter(candidate);
+  this._router.navigate(['/candidate-list'])
+  
     error => {console.log ("exception occured");
     this.msg  = 'error'
 }
-  )}
+}
+  update(candidate: Candidate) {
+    
+    this._service.setter(candidate);
+    this._router.navigate(['/candidate-update'])
+    
+      error => {console.log ("exception occured");
+      this.msg  = 'error'
   }
+    
+
+   
+  
+}}

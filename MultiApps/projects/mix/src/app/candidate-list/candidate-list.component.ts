@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Candidate } from 'projects/mix/src/app/models/candidate';
+import { Component, OnInit, Input  } from '@angular/core';
+
 import {Router, ActivatedRoute} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import { CandidateDataService } from '../services/data/candidate-data.service';
 import { Observable } from 'rxjs';
+import { Candidate } from '../models/candidate';
 
 @Component({
   selector: 'app-candidate-list',
@@ -11,31 +12,31 @@ import { Observable } from 'rxjs';
   styleUrls: ['./candidate-list.component.css']
 })
 export class CandidateListComponent implements OnInit {
-  candidate = new Candidate();
+ 
   msg = '';
   id : number;
-  candidate$: any;
-  route: any;
-candidates : Candidate[];
+  
+  candidate: Candidate;
+  candidates : Candidate[];
 
-  constructor(private _service : CandidateDataService , private _router : Router,private router :
+  constructor(private service : CandidateDataService ,private router: Router, private _router : Router,private rout :
     ActivatedRoute) { }
 
   ngOnInit(){
-    this.id = this.router.snapshot.params['id'];
+   
+    this.candidate = this.service.getter();
     
-    this._service.getEmployees().subscribe(
-      response =>{this.candidates = response;}
-     );
-        
+    
+   
+
+    this.service.getlistUserFromRemote(this.id)
+      .subscribe(data => {
+        console.log(data)
+        this.candidate= data;
+      }, error => console.log(error));
   }
     
-deleteEmployee(candidate: Candidate): void {
-  this._service.deleteEmployee(candidate)
-    .subscribe( data => {
-      this.candidates = this.candidates.filter(u => u !== candidate);
-    })
-};
+
 
 list(){
   this._router.navigate(['/addcandidate']);
