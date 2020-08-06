@@ -1,0 +1,91 @@
+<p>candidate-update works!</p>
+
+<span layout="row" class="font-weight-bolder"><hr flex/><p class="text-center text-info">Welcome to Rigelsky</p><hr flex/></span>
+<span layout="row"><hr flex/><p class="text-center text-info">Rigelsky now specializes in matching professionals with the right temporary or full-time job opportunities with a variety of employers in all industries. </p><hr flex/></span>
+<span layout="row" class="font-weight-bolder"><hr flex/><p class="text-center text-danger">Update candidate information!</p><hr flex/></span>
+<div *ngIf="candidateupdate" class="edit-form"></div>
+<div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-7">
+<div class="container" style="background-color: rgb(241, 242, 248)" >
+    
+  <form class="form-horizontal"  (ngSubmit)="onSubmit()" >
+    <div class="form-group"  >
+      <div class="col-sm-2"></div>
+      <h4 class="col-sm-10"><p class="text-center text-info">Enter your details here</p></h4>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="firstName" >FirstName:</label>
+      <div class="col-sm-10" >
+        <input type="text" class="form-control" name="firstName" placeholder="" [(ngModel)]="candidate.firstName" required #firstName="ngModel">
+        
+      </div>
+    </div>
+
+    <div class="form-group" >
+      <label class="control-label col-sm-2" for="lastName">LastName:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="lastName" placeholder="" [(ngModel)]="candidate.lastName" required #lastName="ngModel">
+       
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="dateOfBirth">DateofBirth:</label> 
+      <div class="col-sm-10">
+        <input type="date" class="form-control" name="dateOfBirth" placeholder="Enter your date of birth" [(ngModel)]="candidate.dateOfBirth" required #dateOfBirth="ngModel">
+        <div *ngIf="dateOfBirth.invalid && dateOfBirth.touched" class="alert alert-danger">
+          <span *ngIf="dateOfBirth.errors.required">Date Of Birth is required</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Email:</label> 
+      <div class="col-sm-10">
+        <input type="email" class="form-control" name="email" placeholder="Enter your email" [(ngModel)]="candidate.email" required #email="ngModel">
+        <div *ngIf="email.invalid && email.touched" class="alert alert-danger">
+          <span *ngIf="email.errors.required">Email is required</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="phone">Phone:</label> 
+      <div class="col-sm-10">
+        <input type="phone" class="form-control" name="phone" placeholder="Enter your phone (123) 345-2345" [(ngModel)]="candidate.phoneNumber" required #phone="ngModel"
+            pattern="/^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i">
+        <div *ngIf="phone.invalid && phone.touched" class="alert alert-danger">
+          <span *ngIf="phone.errors.required">Phone is required</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="qualification">Qualification:</label> 
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="qualification" placeholder="Enter your qualification" [(ngModel)]="candidate.qualification">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="address">Address:</label> 
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="address" placeholder="Enter your address" [(ngModel)]="candidate.address">
+      </div>
+    </div>
+    
+    
+      <div class="row">
+      <div class="col-md-2 form-group">
+      <button type="submit" class="btn btn-primary" (click)="updateCandidate()">Update</button>
+      <p>{{ message }}</p>
+    </div>
+    
+  </div>
+  </form>
+
+</div>
+
+</div></div></div></div>
