@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { Candidate } from 'projects/mixtest/src/app/models/candidate';
+import { Component, OnInit, ViewChild } from '@angular/core';
+
 import { CandidateDataService } from '../services/data/candidate-data.service';
 import {NgForm} from '@angular/forms';
-import {Router} from '@angular/router'
+import {Router, ActivatedRoute} from '@angular/router'
+import { Candidate } from '../models/candidate';
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-candidate-form',
@@ -12,42 +15,29 @@ import {Router} from '@angular/router'
 export class CandidateFormComponent implements OnInit {
 
   errorMessage: string = "";
-  candidate: Candidate = new Candidate();
+  candidate = new Candidate();
   msg = '';
-  
-  constructor(private _service: CandidateDataService, private _router : Router) {
+  id : number;
+  @ViewChild('candidateform', { static: false }) userForm: NgForm;   
+  constructor(private _service: CandidateDataService, private _router : Router,private route:ActivatedRoute) {
     
    }
-
+  
   ngOnInit(){
-
+    
   }
 
-  addCandidate() {
+  addCandidate( ) {
+    
     this._service.addUserFromRemote(this.candidate).subscribe(
       data => {console.log ("response recieved");
-      this._router.navigateByUrl('addsuccess')
+      this._router.navigate(['/addcandidate'])
     },
       error => {console.log ("exception occured");
       this.msg  = 'error'
   }
     )}
     
-   
+} 
 
-deleteCandidate() {
-  this._service.deleteUserFromRemote(this.candidate).subscribe(
-    data => {console.log ("response recieved");
-    this._router.navigateByUrl('deletesuccess')
-  },
-    error => {console.log ("exception occured");
-    this.msg  = 'error'
-
-}
-)}
-
-listCandidate(){
-  this._router.navigate(['/addcandidate'])
-
-}}
 
